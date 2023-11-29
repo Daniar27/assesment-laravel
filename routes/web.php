@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\KasirController;
 use App\Http\Controllers\TenantController;
 use App\Models\Barang;
 use App\Models\Tenant;
@@ -26,5 +27,6 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::resource('barang', BarangController::class);
     Route::post('/barang-list', [BarangController::class, 'getBarang'])->name('barang-list');
     Route::get('/tenant', [TenantController::class, 'index']);
+    Route::get('/kasir', [KasirController::class, 'index']);
 });
 
